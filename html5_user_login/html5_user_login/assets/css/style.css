@@ -37,6 +37,7 @@ form {
 input.username,input.password,input.age,input.phone,input.school {
     width: 350px;
     height: 42px;
+    box-sizing: border-box;
     margin-top: 25px;
     padding: 0 15px;
     background: #2d2d2d; /* browsers that don't support rgba */

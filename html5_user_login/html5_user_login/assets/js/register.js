@@ -1,4 +1,4 @@
-function check_register(para){
+/*function check_register(para){
     if(){
 
      }
@@ -9,18 +9,20 @@ function check_register(para){
 
      }
 
-}
+}*/
 
 
 
 $(document).ready(function() {
-
     $('.page-container form').submit(function(){
         var username = $(this).find('.username').val();
         var password = $(this).find('.password').val();
         var age = $(this).find('.age').val();
         var phone = $(this).find('.phone').val();
         var school = $(this).find('.school').val();
+    
+            console.log(document.getElementById("into").innerHTML);
+        
         if(username == '') {
             $(this).find('.error').fadeOut('fast', function(){
                 $(this).css('top', '27px');
@@ -70,6 +72,7 @@ $(document).ready(function() {
             });
             return false;
         }
+
     });
 
     $('.page-container form .username, .page-container form .password').keyup(function(){
