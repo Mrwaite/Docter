@@ -7,7 +7,7 @@ html, body { height: 100%; min-width: 900px;}
 
 h1, h2 { margin-bottom: 20px; }
 
-h2 { font-size: 24px; }
+h2 {font-size: 24px; }
 
 
 
@@ -185,6 +185,80 @@ iframe { border: none; }
 
 #main_select>li>a{padding: 6px 23px;background-color: #fff;color: #000;font-weight: 600;}
 
-#main_select>li>a:hover,#main_select>li>a:active,#main_select>li>a:focus{border: 2px solid #8C8C8C;color: white;background-color: #000}
+#main_select>li>a:hover,#main_select>li>a:active,#main_select>li>a:focus{border: 2px solid #8C8C8C;color: white;background-color: #000;}
 
 #main_select>li>a>i{margin: 0;margin-right: 1px}
+
+
+
+
+/*------------------这个是表格------------------*/
+
+
+.hor-minimalist{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 20px;
+    background: #fff;
+    border-collapse: collapse;
+    text-align: left;
+    margin-top: -45px;
+    width: 845px;
+    margin-left: 39px;
+    
+}
+
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+
+
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+.hor-minimalist th {
+    font-size: 20px;
+    font-weight: normal;
+    color: #039;
+    border-bottom: 2px solid #6678b1;
+    padding: 10px 8px;
+}
+
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+.hor-minimalist td {
+    color: #669;
+    padding: 9px 8px 0;
+}
+
+
+/*------------------这个是表格------------------*/
+
+
+#personInfo_table{
+    margin-top: -45px;
+    width: 845px;
+    margin-left: 39px;
+    font-size: 28px;
+    display: none;
+}
+
+.inter_active{background-color: #000;color: #fff;}
