@@ -9,12 +9,12 @@ function showMyClient(name){
 		   var client_data = JSON.parse(data);
 		   var client_data_table_tr = "";
 		   for(var i in client_data){
-                client_data_table_tr += "<tr>
-											<td>"+ client_data[i][0] +"</td>
-											<td>"+ client_data[i][1] +"</td>
-											<td>"+ client_data[i][2] +"</td>
-											<td>"+ client_data[i][3] +"</td>
-											<td>"+ client_data[i][4] +"</td>
+                client_data_table_tr += "<tr>\
+											<td>"+ client_data[i][0] +"</td>\
+											<td>"+ client_data[i][1] +"</td>\
+											<td>"+ client_data[i][2] +"</td>\
+											<td>"+ client_data[i][3] +"</td>\
+											<td>"+ client_data[i][4] +"</td>\
 						                </tr>"
 
 		    }
@@ -29,14 +29,14 @@ function showPersonInfo(name){
     $.ajax
 	({
 		type:'POST',
-		url:'XXX.jsp',
+		url:'XXX.jsp?name=' + name,
 		success:function(data)
 		{
 		   var person_data = JSON.parse(data);
 		   var person_data_p = "";
-           person_data_p = "<p>姓名："+ person_data[0] +"</p>
-							<p>学历："+ person_data[1] +"</p>
-							<p>电话："+ person_data[2] +"</p>
+           person_data_p = "<p>姓名："+ person_data[0] +"</p>\
+							<p>学历："+ person_data[1] +"</p>\
+							<p>电话："+ person_data[2] +"</p>\
 							<p>年龄："+ person_data[3] +"</p>"
 						     
 		    $("#personInfo_table").append(person_data_p);
@@ -50,18 +50,18 @@ function showMyRecord(name){
 	$.ajax
 	({
 		type:'POST',
-		url:'XXXX.jsp',
+		url:'XXXX.jsp?name=' + name,
 		success:function(data)
 		{
 		   var record_data = JSON.parse(data);
 		   var record_data_table_tr = "";
 		   for(var i in record_data){
-                record_data_table_tr += "<tr>
-											<td>"+ record_data[i][0] +"</td>
-											<td>"+ record_data[i][1] +"</td>
-											<td>"+ record_data[i][2] +"</td>
-											<td>"+ record_data[i][3] +"</td>
-											<td>"+ record_data[i][4] +"</td>
+                record_data_table_tr += "<tr>\
+											<td>"+ record_data[i][0] +"</td>\
+											<td>"+ record_data[i][1] +"</td>\
+											<td>"+ record_data[i][2] +"</td>\
+											<td>"+ record_data[i][3] +"</td>\
+											<td>"+ record_data[i][4] +"</td>\
 						                </tr>"
 
 		    }
@@ -72,32 +72,42 @@ function showMyRecord(name){
 }
 
 
+function getEvaluationInfo(name){
+    $.ajax
+	({
+		type:'POST',
+		url:'XXXX.jsp?name=' + name,
+		success:function(data)
+		{
+		   var evaluation_data = JSON.parse(data);
+		   var evaluation_data_tr = "";
+		   for(var i in evaluation_data){
+                evaluation_data_tr += "<tr>\
+											<td>"+evaluation_data_tr[i][0]+"</td>\
+											<td>"+evaluation_data_tr[i][1]+"</td>\
+											<td>"+evaluation_data_tr[i][2]+"</td>\
+											<td>"+evaluation_data_tr[i][3]+"</td>\
+											<td>"+evaluation_data_tr[i][4]+"</td>\
+											<td>"+evaluation_data_tr[i][5]+"</td>\
+											<td>"+evaluation_data_tr[i][6]+"</td>\
+											<td><button id=\"goInToEvaluation\" class=\"button next\" >go</button></td>\
+						                </tr>"
+
+		    }
+		    $("#hor-minimalist-client>tbody").append(evaluation_data_tr);
+		    $("#goInToEvaluation").click(function(){
+		    	var tlk_chat = "<div id=\"tlkio\" data-channel=\""+ evaluation_data_tr[i][0] +"\" style=\"width:100%;height:400px;\"></div>\
+		    	                       <script async src=\"http://tlk.io/embed.js\" type=\"text/javascript\"></script><div>聊天框</div><button>回复</button>"
+		    	$("#hor-minimalist-client").css("display","none");
+		    	$("div.right-container").append(tlk_chat);
+		    })
+		}
+	 });
+}
+
+
 
 
 window.onload = function(){
-	var person_info = document.getElementById("personInfo");
-	var my_client = document.getElementById("myClient");
-	var coun_record = document.getElementById("counRecord");
-	var evaluation = document.getElementById("evaluation");
-	var consult = document.getElementById("consult");
-	var hall = document.getElementById("hall");
-	person_info.onclick = function(){
-          $("#hor-minimalist-client").css("display","none");
-          $("#hor-minimalist-record").css("display","none");
-          $("#personInfo_table").css("display","block");
-	};
-	coun_record.onclick = function(){
-          $("#hor-minimalist-client").css("display","none");
-          $("#hor-minimalist-record").css("display","block");
-          $("#personInfo_table").css("display","none");
-	};
-	evaluation.onclick = function(){
-		
-	};
-	consult.onclick = function(){
-
-	};
-	hall.onclick = function(){
-
-	};
+	
 }
