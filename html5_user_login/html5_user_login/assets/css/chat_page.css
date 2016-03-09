@@ -39,7 +39,7 @@ position: relative;
 }
 
 #chat_conent{width: 100%;
-    min-height: 440px;overflow: hidden;}
+    min-height: 440px;overflow-y: auto;}
 
 .chat_tr{
 	width: 100%;
