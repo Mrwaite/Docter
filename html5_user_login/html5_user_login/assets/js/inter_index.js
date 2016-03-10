@@ -95,12 +95,7 @@ function getEvaluationInfo(name){
 
 		    }
 		    $("#hor-minimalist-client>tbody").append(evaluation_data_tr);
-		    $("#goInToEvaluation").click(function(){
-		    	var tlk_chat = "<div id=\"tlkio\" data-channel=\""+ evaluation_data_tr[i][0] +"\" style=\"width:100%;height:400px;\"></div>\
-		    	                       <script async src=\"http://tlk.io/embed.js\" type=\"text/javascript\"></script><div>聊天框</div><button>回复</button>"
-		    	$("#hor-minimalist-client").css("display","none");
-		    	$("div.right-container").append(tlk_chat);
-		    })
+		   
 		}
 	 });
 }

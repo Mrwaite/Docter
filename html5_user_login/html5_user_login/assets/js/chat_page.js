@@ -10,19 +10,19 @@ function showContent(docter_name,patient_name){
 			var chat_content_div = '';
 			for(var i in chat_content){
 				if(chat_content[i]['profession'] === 'docter'){
-					chat_content_div += '<div class=\"box_left chat_tr\">\
+					chat_content_div += "<div class=\"box_left chat_tr\">\
 									        <img class=\"box_left\" src=\"assets/img/chat_img.png\" style=\"height: 50px;width: 50px;\"/>\
 										    <div>\
-										        <p class=\"chat_nick\">'+chat_content[i]['name']+'</p>\  
-											    <p class=\"chat_content arrow_left\">'+chat_content[i]['content']+'</p>\
+										        <p class=\"chat_nick\">"+chat_content[i]['name']+"</p>\
+											    <p class=\"chat_content arrow_left\">"+chat_content[i]['content']+"</p>\
 									        </div>\
-									    </div>';
+									    </div>";
 				}
 				else{
 					chat_content_div += '<div class=\"box_right chat_tr\">\
 									        <img class=\"box_right\" src=\"assets/img/chat_img.png\" style=\"height: 50px;width: 50px;\"/>\
 										    <div>\
-										        <p class=\"chat_nick\">'+chat_content[i]['name']+'</p>\  
+										        <p class=\"chat_nick\">'+chat_content[i]['name']+'</p>\
 											    <p class=\"chat_content arrow_right\">'+chat_content[i]['content']+'</p>\
 									        </div>\
 									    </div>';
@@ -41,7 +41,7 @@ $(document).ready(function() {
         var new_chat_content_div = '<div class=\"box_left chat_tr\">\
 									        <img class=\"box_left\" src=\"assets/img/chat_img.png\" style=\"height: 50px;width: 50px;\"/>\
 										    <div>\
-										        <p class=\"chat_nick\">'+ name +'</p>\  
+										        <p class=\"chat_nick\">'+ name +'</p>\
 											    <p class=\"chat_content arrow_left\">'+new_chat_content+'</p>\
 									        </div>\
 									  </div>';
