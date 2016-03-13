@@ -2,6 +2,7 @@
 $(document).ready(function() {
 
     $('.page-container form').submit(function(){
+        console.log(1);
         var username = $(this).find('.username').val();
         var password = $(this).find('.password').val();
         if(username == '') {

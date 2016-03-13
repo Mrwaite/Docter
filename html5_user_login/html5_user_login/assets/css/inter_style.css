@@ -12,7 +12,10 @@ h2 {font-size: 24px; }
 
 ul li{list-style: none;}
 
-input,button,select,textarea{ outline:none;}
+
+
+a,input,button,select,textarea{ outline:none;}
+a:link,a:visited,a:hover,a:active{text-decoration:none;}
 textarea{ font-size:13px; resize:none;}
 
 
@@ -199,74 +202,90 @@ iframe { border: none; }
 
 /*------------------这个是表格------------------*/
 
+.table_information_ul{    overflow: hidden;
+    margin-top: -49px;width: 900px;}
 
-.hor-minimalist{
-    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-    font-size: 20px;
-    background: #fff;
-    border-collapse: collapse;
-    text-align: left;
-    margin-top: -45px;
-    width: 845px;
-    margin-left: 39px;
-    
+#personInfo_table,.table_information_ul>li{
+    width: 250px;
+    margin-right: 28px;
+    margin-bottom: 15px;
+    z-index: 1;
+    position: relative;
+    left: 0;
+    background: #F0F0E3;
+    padding: 15px 15px 15px 47px;
+    color: #696A52;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.85), 0 1px 0 rgba(255,255,255,.75) inset;
+float: left;}
+
+
+#personInfo_table{    width: 584px;
+    height: 390px;
+    margin-left: 165px;
+    margin-top: -41px;}
+
+#personInfo_table>img{    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 16px;}
+
+#personInfo_table>div#personInfo_table_name{margin-left: 60px;display: inline-block;}
+
+#personInfo_table>ul{    width: 112%;
+    border: 1px solid black;
+    margin-left: -48px;
+    overflow: hidden;text-align: center;}
+
+#personInfo_table>ul>li{width: 33.3%;
+    height: 100px;
+    float: left;}
+
+
+.page{    
+    width: 900px;
+    margin: 25px 0 auto;
+    overflow: hidden;
+    clear: both;
+    text-align: center;}
+
+.page a{display: inline-block;
+    margin: 0 5px;
+    padding: 0 5px;
+   width: 28px;
+    height: 29px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #787d82;
+    text-align: center;
+    border-bottom: 1px solid transparent;
+    -webkit-transition: border-color 0.2s;
+    -moz-transition: border-color 0.2s;
+    transition: border-color 0.2s;}
+.page a.active {
+    background: #cc0000;
+    color: #ffffff;
+    border-color: #cc0000;
 }
 
-thead {
-    display: table-header-group;
-    vertical-align: middle;
-    border-color: inherit;
-}
-
-
-
-
-tr {
-    display: table-row;
-    vertical-align: inherit;
-    border-color: inherit;
-}
-
-.hor-minimalist th {
-    font-size: 20px;
-    font-weight: normal;
-    color: #039;
-    border-bottom: 2px solid #6678b1;
-    padding: 10px 8px;
-}
-
-
-tbody {
-    display: table-row-group;
-    vertical-align: middle;
-    border-color: inherit;
-}
-
-
-tr {
-    display: table-row;
-    vertical-align: inherit;
-    border-color: inherit;
-}
-
-.hor-minimalist td {
-    color: #669;
-    padding: 9px 8px 0;
-}
+.page a:hover{
+    border-color: #cc0000;}
 
 
 /*------------------这个是表格------------------*/
 
 
-#personInfo_table{
+/*#personInfo_table{
     margin-top: -45px;
     width: 845px;
     margin-left: 39px;
     font-size: 28px;
     display: none;
-}
+}*/
 
 #main_select>li>a.inter_active{background-color: #000;color: #fff;}
+
+
 
 
 
@@ -340,11 +359,11 @@ tr {
 
 .comment_ul{
     margin-top: -57px;
-    min-width: 900px;
-    max-width: 1150px;
+    width: 900px;
 }
 
 .comment_li{
+    width: 100%;
     z-index: 1;
     position: relative;
     left: 0;
@@ -355,6 +374,13 @@ tr {
     box-shadow: 0 1px 2px rgba(0,0,0,.85), 0 1px 0 rgba(255,255,255,.75) inset;}
 
 .comment_li>h3{margin-top: 8px;}
+
+
+.comment_li>button{    float: right;
+    margin-right: 10px;
+    margin-top: -21px;}
+
+ .comment_li>p{width: 710px;word-wrap:break-word;}
 
 
 .answer_pantient{ width: 87%;
@@ -398,7 +424,10 @@ tr {
     -webkit-transition: all 0.1s ease-out;
     -moz-transition: all 0.1s ease-out;
     -o-transition: all 0.1s ease-out;
-    transition: all 0.1s ease-out;}
+    transition: all 0.1s ease-out;
+}
 
 
-.submit_answer:active{border-bottom: none;}
+.submit_answer:active{border-bottom: none;top: 4px;}
+
+

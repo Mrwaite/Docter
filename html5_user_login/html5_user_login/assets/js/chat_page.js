@@ -1,10 +1,10 @@
-window.setInterval("showContent(docter_name,patient_name);",1000);
+// window.setInterval("showContent(docter_name,patient_name);",1000);
 
 
 function showContent(docter_name,patient_name){
 	$.ajax({
-		type ='GET',
-		url = 'xxx.jsp?docter_name=' +docter_name+ '&&patient_name=' + patient_name;
+		type : 'GET',
+		url : 'xxx.jsp?docter_name=' +docter_name+ '&&patient_name=' + patient_name,
 		success:function(data){
 			var chat_content = JSON.parse(data);
 			var chat_content_div = '';
@@ -36,16 +36,18 @@ function showContent(docter_name,patient_name){
 
 
 $(document).ready(function() {
+	
     $('#chat_box>footer>form').submit(function(){
-        var new_chat_content = $(this).find('#submit_text').val();
+    	/*console.log(1);
+        var new_chat_content = $(this).find('#submit_text').val();*/
         var new_chat_content_div = '<div class=\"box_left chat_tr\">\
 									        <img class=\"box_left\" src=\"assets/img/chat_img.png\" style=\"height: 50px;width: 50px;\"/>\
 										    <div>\
-										        <p class=\"chat_nick\">'+ name +'</p>\
-											    <p class=\"chat_content arrow_left\">'+new_chat_content+'</p>\
+										        <p class=\"chat_nick\">1</p>\
+											    <p class=\"chat_content arrow_left\">1</p>\
 									        </div>\
 									  </div>';
-		$('#chat_cotent').append(new_chat_content_div);
+		$('#chat_content').append(new_chat_content_div);
 		document.getElementById('chat_conent').scrollTop = document.getElementById('chat_conent').scrollHeight*2;							  
         if(new_chat_content == '') {
             return false;
@@ -55,6 +57,7 @@ $(document).ready(function() {
     });
 
      $('form#submit_report').submit(function(){
+     	console.log(1);
          var report_content = $('#input_about_evaluation').val();
          if(report_content == ''){
          	return false;

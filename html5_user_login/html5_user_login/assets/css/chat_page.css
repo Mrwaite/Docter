@@ -38,7 +38,7 @@ position: relative;
 #chat_box{width: 800px;height: 580px;margin:0 auto;margin-bottom: 30px;
 }
 
-#chat_conent{width: 100%;
+#chat_content{width: 100%;
     min-height: 440px;overflow-y: auto;}
 
 .chat_tr{
