@@ -178,6 +178,17 @@ function getReportInfo(){
 	});
 }
 
+/*下面是获取announce内容的函数*/
+function showAnnounceInfo(){
+	$.ajax({
+		type:"get",
+		url:"xxx.jsp?xxx",
+		success:function(data){
+			var announce_info = JSON.parse(data);
+			$("#announce_index").html(announce_info);
+		}
+	});
+}
 
 
 

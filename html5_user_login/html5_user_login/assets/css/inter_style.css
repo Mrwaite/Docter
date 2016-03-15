@@ -1,4 +1,4 @@
-* {	font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+* {	font-family: "HelveticaNeue", "Helvetica Neue", "微软雅黑",Helvetica, Arial, sans-serif; }
 
 html, body { height: 100%; min-width: 900px;}
 
@@ -11,7 +11,6 @@ h2 {font-size: 24px; }
 
 
 ul li{list-style: none;}
-
 
 
 a,input,button,select,textarea{ outline:none;}
@@ -465,3 +464,17 @@ display:inline-block;}
 .table_report_ul>li>p{word-wrap: break-word;}
 
 .table_report_ul>li>div{height: 31px;}
+
+/*---announce界面----------*/
+
+.admin_announce{    background-image: url('../img/index_shadow.png');
+    background-size: 100% 100%;
+    width: 749px;
+    height: 500px;
+    margin-top: 100px;
+    margin-left: 100px;
+    padding: 54px 45px 0px 45px;
+    }
+
+#announce_index{word-wrap: break-word;margin-top: 30px;font-size: 20px;
+    padding:10px 20px;letter-spacing: 1px;}
