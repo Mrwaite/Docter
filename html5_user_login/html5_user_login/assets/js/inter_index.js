@@ -182,7 +182,7 @@ function getReportInfo(){
 
 
 $(document).ready(function(){
-	$("#change_report").submit(function(){
+	$("#submit_report").submit(function(){
 		var change_domain = $("#input_about_evaluation").val();
 		if(change_report == ''){
 			return false;
