@@ -230,16 +230,24 @@ float: left;}
     height: 200px;
     margin: 16px;}
 
-#personInfo_table>div#personInfo_table_name{margin-left: 60px;display: inline-block;}
+#personInfo_table>div#personInfo_table_name{margin-left: 60px;display: inline-block;font-size: 50px;}
 
 #personInfo_table>ul{    width: 112%;
-    border: 1px solid black;
+   /* border: 1px solid black;*/
     margin-left: -48px;
-    overflow: hidden;text-align: center;}
+    overflow: hidden;text-align: center;
+padding: 0;
+    margin-top: 43px;}
 
-#personInfo_table>ul>li{width: 33.3%;
+#personInfo_table>ul>li{    width: 33.3%;
     height: 100px;
-    float: left;}
+    float: left;
+    /*border: 1px solid black;*/
+    font-size: 18px;
+}
+
+#personInfo_table>ul>li>i{width: 100%;
+        margin-top: 11px;}
 
 
 .page{    
@@ -386,7 +394,7 @@ float: left;}
 .answer_pantient{ width: 87%;
     height: 31px;
     box-sizing: border-box;
-    margin-top: 2px;
+    margin-top: 2px;personInfo_table
     padding: 0 15px;
     background: #2d2d2d;
     background: rgba(45,45,45,.15);
@@ -415,7 +423,7 @@ float: left;}
     padding: .2em 0;
     position: relative;
     margin: 0 1.5em;
-    width: 7%;
+    width: 53px;
     display: inline-block;
     text-decoration: none;
     border: solid #b03060 1px;
@@ -430,4 +438,30 @@ float: left;}
 
 .submit_answer:active{border-bottom: none;top: 4px;}
 
+.flt_rt{float: right;}
 
+
+.table_report_ul{
+    margin-top: -49px;width: 900px;-webkit-column-width:160px;
+-moz-column-width:160px;
+-o-colum-width:160px;
+column-width:160px;
+/* 两栏之间的间距 */
+-webkit-column-gap:82px;
+-moz-column-gap:82px;
+-o-column-gap:82px;
+column-gap:82px;}
+
+.table_report_ul>li{
+    margin-bottom: 15px;
+width: 250px;
+ background: #F0F0E3;
+    padding: 15px 15px 15px 47px;
+    color: #696A52;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.85), 0 1px 0 rgba(255,255,255,.75) inset;
+display:inline-block;}
+
+.table_report_ul>li>p{word-wrap: break-word;}
+
+.table_report_ul>li>div{height: 31px;}

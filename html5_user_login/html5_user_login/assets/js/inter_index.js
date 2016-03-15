@@ -158,8 +158,35 @@ function upConsult(doctor_name,patient_name,factor){
      });
 }*/
 
+function getReportInfo(){
+	$.ajax({
+		type:'get',
+		url: '',
+		success:function (data){
+			var report_info = JSON.parse(data);
+			var report_info_li = '';
+			var chat_url = 'change_report.jsp?doctor_name='+''+'&patient_name='+'';
+			for(var i in report_info){
+				report_info_li +=   '<li>\
+										<p>'+@医生对@病人的报告+'</p>\
+										<p>'+@contentsdddddddddddddddddddddggggrte+'</p>\
+										<button class=\"submit_answer flt_rt\" onclick=\'open_chat(\""+ chat_url +"\");\'>修改</button>\
+									</li>'
+			}
+			$(".table_report_ul").append(report_info_li);
+		}
+	});
+}
+
 
 
 
 $(document).ready(function(){
+	$("#change_report").submit(function(){
+		var change_domain = $("#input_about_evaluation").val();
+		if(change_report == ''){
+			return false;
+		}
+		setTimeout('window.close()',2000);
+	})
 })
