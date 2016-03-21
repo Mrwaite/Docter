@@ -17,6 +17,8 @@ function jumpPageNumber(number){
 
 
 function showMyClient(name){
+	var page_number;
+	var jump_a;
     $("#hor-minimalist-client").css("display","block");
 	$.ajax
 	({
@@ -26,7 +28,6 @@ function showMyClient(name){
 		{
 		   var client_data = JSON.parse(data);
 		   var client_data_table_tr = "";
-		   var i = 0;
 		   for(var i in client_data){
                 client_data_table_tr += '<li style=\"display: none\">\
 											<p>姓名：'+'陈威特'+'</p>\
@@ -38,9 +39,18 @@ function showMyClient(name){
 
 		    }
 		    $(".table_information_ul").append(client_data_table_tr);
-		    while(i<=5){
-		    	$(".table_information_ul").children()[i].css("display","block");
+		    var page_number;
+	        var jump_a;
+		    page_number = floor(i / 6);
+		    for(var j = 0;j < page_number;j++){
+		    	if(j == 0){
+		    	     jump_a += '<a href=\"javascript:void(0);\" onclick=\"jumpPageNumber(this);\" class=\"active\">'+ j+1 +'</a>'
+		        }
+		        else{
+		        	 jump_a += '<a href=\"javascript:void(0);\" onclick=\"jumpPageNumber(this);\">'+ j+1 +'</a>'
+		        }
 		    }
+		    $(".page").append(jump_a);
 		}
 	 });
 
@@ -158,7 +168,7 @@ function upConsult(doctor_name,patient_name,factor){
      });
 }*/
 
-function getReportInfo(){
+/*function getReportInfo(){
 	$.ajax({
 		type:'get',
 		url: '',
@@ -178,7 +188,7 @@ function getReportInfo(){
 	});
 }
 
-/*下面是获取announce内容的函数*/
+//下面是获取announce内容的函数
 function showAnnounceInfo(){
 	$.ajax({
 		type:"get",
@@ -188,11 +198,13 @@ function showAnnounceInfo(){
 			$("#announce_index").html(announce_info);
 		}
 	});
-}
+}*/
 
 
 
 $(document).ready(function(){
+	var input_text = "提交";
+	var class_name = ["姓名","年龄","电话","职业","邮箱"];
 	$("#submit_report").submit(function(){
 		var change_domain = $("#input_about_evaluation").val();
 		if(change_report == ''){
@@ -200,4 +212,26 @@ $(document).ready(function(){
 		}
 		setTimeout('window.close()',2000);
 	})
+	$(".btnplayit").on("click",function(){
+		$(this).prev().html("<input class=\"personInfo_input\" />");
+		$(this).removeClass("btnplayit");
+		$(this).addClass("btnplayit_submit");
+		$(this).text("提交");
+		$(this).on("click",function(){
+			var class_number = $(".personInfo_table_ul>li").index($(this).parent());
+			console.log(class_name[class_number]);			
+			$.ajax({
+				type: "post",
+				url: "xxx.jsp?...",
+				data: {
+					doctor: doctor,
+					number: class_name[class_number],
+					changeData: $(".personInfo_input").val(),
+				}
+				success: function(){
+					location.reload();
+				}
+			});
+		});
+	});
 })
