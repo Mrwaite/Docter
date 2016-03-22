@@ -57,7 +57,7 @@ function showMyClient(name){
 }
 
 
-/*function showPersonInfo(name){
+function showPersonInfo(name){
     $.ajax
 	({
 		type:'POST',
@@ -65,19 +65,20 @@ function showMyClient(name){
 		success:function(data)
 		{
 		   var person_data = JSON.parse(data);
-		   var person_data_p = "";
-           person_data_p = "<p>姓名："+ person_data[0] +"</p>\
-							<p>学历："+ person_data[1] +"</p>\
-							<p>电话："+ person_data[2] +"</p>\
-							<p>年龄："+ person_data[3] +"</p>"
+		   var person_data_span = "";
+		   for(var i = 0;i < 5;i++){
+           	  person_data_span = "<span>"+person_data[i]+"</span>"
+           	  $("#personInfo_table_ul li").eq(i).append(person_data_span);
+           }
+           
 		}
 						     
-		    $("#personInfo_table").append(person_data_p);
+		    
 	 });
-}*/
+}
 
 
-/*
+
 function showMyRecord(name){
 	$.ajax
 	({
@@ -88,20 +89,21 @@ function showMyRecord(name){
 		   var record_data = JSON.parse(data);
 		   var record_data_table_tr = "";
 		   for(var i in record_data){
-                record_data_table_tr += "<tr>\
-											<td>"+ record_data[i][0] +"</td>\
-											<td>"+ record_data[i][1] +"</td>\
-											<td>"+ record_data[i][2] +"</td>\
-											<td>"+ record_data[i][3] +"</td>\
-											<td>"+ record_data[i][4] +"</td>\
-						                </tr>"
+                record_data_table_tr += "<li>\
+											<time class=\"cbp_tmtime\"><span>"+record_data[i][""]+"/"+record_data[i][""]+"/"+record_data[i][""]+"</span> <span>"+record_data[i][""]+":"+record_data[i][""]+"</span></time>\
+											<div class=\"cbp_tmicon cbp_tmicon-phone\"></div>\
+											<div class=\"cbp_tmlabel\">\
+												<h2>\"Ricebean black-eyed pea\"</h2>\
+												<p>"+record_data[i][""]+"</p>\
+											</div>\
+										</li>"
 
 		    }
 		    $("#hor-minimalist-client>tbody").append(record_data_table_tr);
 		}
 	 });
 
-}*/
+}
 
 /*
 function getEvaluationInfo(name){
@@ -202,6 +204,7 @@ function showAnnounceInfo(){
 
 
 
+
 $(document).ready(function(){
 	var input_text = "提交";
 	var class_name = ["姓名","年龄","电话","职业","邮箱"];
@@ -213,25 +216,25 @@ $(document).ready(function(){
 		setTimeout('window.close()',2000);
 	})
 	$(".btnplayit").on("click",function(){
-		$(this).prev().html("<input class=\"personInfo_input\" />");
-		$(this).removeClass("btnplayit");
-		$(this).addClass("btnplayit_submit");
-		$(this).text("提交");
-		$(this).on("click",function(){
+		var $new_button = $("<button class=\"btnplayit_submit\">提交</button>")
+        $(this).prev().html("<input class=\"personInfo_input\" />");
+        $(this).parent().append($new_button);
+        $(this).remove();
+	});
+	$(".personInfo_table_ul li").on("click",".btnplayit_submit",function(){
 			var class_number = $(".personInfo_table_ul>li").index($(this).parent());
-			console.log(class_name[class_number]);			
 			$.ajax({
 				type: "post",
-				url: "xxx.jsp?...",
+				url: "changeInfo.jsp",
 				data: {
-					doctor: doctor,
+					doctor: name,
 					number: class_name[class_number],
 					changeData: $(".personInfo_input").val(),
-				}
+				},
 				success: function(){
 					location.reload();
 				}
 			});
 		});
-	});
 })
+
