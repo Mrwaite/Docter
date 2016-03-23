@@ -16,43 +16,41 @@ function jumpPageNumber(number){
 }
 
 
-function showMyClient(name){
-	var page_number;
-	var jump_a;
-    $("#hor-minimalist-client").css("display","block");
-	$.ajax
-	({
-		type:'POST',
-		url:'myPatient.jsp?name=' + name,
-		success:function(data)
-		{
-		   var client_data = JSON.parse(data);
-		   var client_data_table_tr = "";
-		   for(var i in client_data){
+
+function showMyClient(name) {
+    var page_number;
+    var jump_a;
+    $("#hor-minimalist-client").css("display", "block");
+    $.ajax({
+        type: 'POST',
+        url: 'myPatient.jsp?name=' + name,
+        success: function (data) {
+            var client_data = JSON.parse(data);
+            var client_data_table_tr = "";
+            for (var i in client_data) {
                 client_data_table_tr += '<li style=\"display: none\">\
-											<p>姓名：'+'陈威特'+'</p>\
-											<p>年龄：'+'20'+'</p>\
-											<p>性别：'+'男'+'</p>\
-											<p>职业：'+'学生'+'</p>\
-											<p>联系方式：'+'155 5555 5555'+'</p>\
+											<p>姓名：' + '陈威特' + '</p>\
+											<p>年龄：' + '20' + '</p>\
+											<p>性别：' + '男' + '</p>\
+											<p>职业：' + '学生' + '</p>\
+											<p>联系方式：' + '155 5555 5555' + '</p>\
 										</li>'
 
-		    }
-		    $(".table_information_ul").append(client_data_table_tr);
-		    var page_number;
-	        var jump_a;
-		    page_number = floor(i / 6);
-		    for(var j = 0;j < page_number;j++){
-		    	if(j == 0){
-		    	     jump_a += '<a href=\"javascript:void(0);\" onclick=\"jumpPageNumber(this);\" class=\"active\">'+ j+1 +'</a>'
-		        }
-		        else{
-		        	 jump_a += '<a href=\"javascript:void(0);\" onclick=\"jumpPageNumber(this);\">'+ j+1 +'</a>'
-		        }
-		    }
-		    $(".page").append(jump_a);
-		}
-	 });
+            }
+            $(".table_information_ul").append(client_data_table_tr);
+            var page_number;
+            var jump_a;
+            page_number = floor(i / 6);
+            for (var j = 0; j < page_number; j++) {
+                if (j == 0) {
+                    jump_a += '<a href=\"javascript:void(0);\" onclick=\"jumpPageNumber(this);\" class=\"active\">' + j + 1 + '</a>'
+                } else {
+                    jump_a += '<a href=\"javascript:void(0);\" onclick=\"jumpPageNumber(this);\">' + j + 1 + '</a>'
+                }
+            }
+            $(".page").append(jump_a);
+        }
+    });
 
 }
 
@@ -170,17 +168,17 @@ function upConsult(doctor_name,patient_name,factor){
      });
 }*/
 
-/*function getReportInfo(){
+function getReportInfo(){
 	$.ajax({
 		type:'get',
 		url: '',
 		success:function (data){
 			var report_info = JSON.parse(data);
 			var report_info_li = '';
-			var chat_url = 'change_report.jsp?doctor_name='+''+'&patient_name='+'';
+			var chat_url = 'change_report.jsp?doctor_name='+'医生名字'+'&patient_name='+'病人名字'+'是什么检查表';
 			for(var i in report_info){
 				report_info_li +=   '<li>\
-										<p>'+@医生对@病人的报告+'</p>\
+										<p>'+@病人的报告@什么检查表+'</p>\
 										<p>'+@contentsdddddddddddddddddddddggggrte+'</p>\
 										<button class=\"submit_answer flt_rt\" onclick=\'open_chat(\""+ chat_url +"\");\'>修改</button>\
 									</li>'
@@ -200,7 +198,7 @@ function showAnnounceInfo(){
 			$("#announce_index").html(announce_info);
 		}
 	});
-}*/
+}
 
 
 
@@ -208,13 +206,19 @@ function showAnnounceInfo(){
 $(document).ready(function(){
 	var input_text = "提交";
 	var class_name = ["姓名","年龄","电话","职业","邮箱"];
+    $("submit_about_evaluation").submit(function(){
+       if($("input_about_evaluation").val() == ""){
+           return false;
+       } 
+        setTimeout("window.close();",2000)
+    });
 	$("#submit_report").submit(function(){
 		var change_domain = $("#input_about_evaluation").val();
 		if(change_report == ''){
 			return false;
 		}
 		setTimeout('window.close()',2000);
-	})
+	});
 	$(".btnplayit").on("click",function(){
 		var $new_button = $("<button class=\"btnplayit_submit\">提交</button>")
         $(this).prev().html("<input class=\"personInfo_input\" />");
