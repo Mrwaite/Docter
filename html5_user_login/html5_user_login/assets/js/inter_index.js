@@ -1,4 +1,4 @@
-function jumpPageNumber(number){
+/*function jumpPageNumber(number){
 	var table_ul = $("ul.table_information_ul").children();
 	var number_change = parseInt(number.innerHTML);
 	var page_a = $(".page").children();
@@ -102,7 +102,7 @@ function showMyRecord(name){
 	 });
 
 }
-
+*/
 /*
 function getEvaluationInfo(name){
     $.ajax
@@ -167,7 +167,7 @@ function upConsult(doctor_name,patient_name,factor){
      	}
      });
 }*/
-
+/*
 function getReportInfo(){
 	$.ajax({
 		type:'get',
@@ -187,7 +187,7 @@ function getReportInfo(){
 		}
 	});
 }
-
+/*
 //下面是获取announce内容的函数
 function showAnnounceInfo(){
 	$.ajax({
@@ -198,7 +198,7 @@ function showAnnounceInfo(){
 			$("#announce_index").html(announce_info);
 		}
 	});
-}
+}*/
 
 
 
@@ -206,6 +206,16 @@ function showAnnounceInfo(){
 $(document).ready(function(){
 	var input_text = "提交";
 	var class_name = ["姓名","年龄","电话","职业","邮箱"];
+	$('.my-slider').unslider({
+				dots: true, 
+			});
+	$('input').glDatePicker({
+		 showAlways: true,
+		 cssName: 'flatwhite',
+		 allowMonthSelect: true,
+	});
+	$("#mydate").css("display","none");
+	$(".gldp-flatwhite").css({"display":"inline-block","margin-left":"50px","margin-top":"20px","position":"relative","top":"0","left":"0"})
     $("submit_about_evaluation").submit(function(){
        if($("input_about_evaluation").val() == ""){
            return false;
