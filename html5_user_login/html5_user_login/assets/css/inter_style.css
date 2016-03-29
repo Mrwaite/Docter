@@ -800,7 +800,7 @@ a:hover {
 
 .news_ul{display: inline-block;}
 .news_ul:after{content:"";display: block;clear: both;}
-.new_li{background-color: #FFFFFF;
+.new_p,.new_li{background-color: #FFFFFF;
     border: 1px solid #DDDDDD;
     border-radius: 4px 4px 4px 4px;
     padding: 39px 19px 24px;
@@ -830,7 +830,7 @@ a:hover {
      box-shadow: inset 0 1px 0 rgba(255,255,255,.2),0 1px 2px rgba(0,0,0,.05); }
 
 
-.new_li:after{
+.new_p:after,.new_li:after{
     background-color: #F5F5F5;
     border: 1px solid #DDDDDD;
     border-radius: 4px 0 4px 0;
@@ -845,3 +845,10 @@ a:hover {
     
 }
 
+.new_p{    width: 836px;
+    margin-left: 51px;}
+
+.new_p:after{
+    content:"动态";
+        top: -263px;
+}

@@ -1,4 +1,5 @@
 .gldp-flatwhite {
+	display: inline-block !important;
 	font-family: 'helvetica';
 	top: 0 !important;
 }

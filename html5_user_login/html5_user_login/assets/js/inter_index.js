@@ -212,7 +212,9 @@ $(document).ready(function(){
 	$('input').glDatePicker({
 		 showAlways: true,
 		 cssName: 'flatwhite',
-		 allowMonthSelect: true,
+		 allowMonthSelect: false,
+         allowYearSelect: false,
+		 
 	});
 	$("#mydate").css("display","none");
 	$(".gldp-flatwhite").css({"display":"inline-block","margin-left":"50px","margin-top":"20px","position":"relative","top":"0","left":"0"})
