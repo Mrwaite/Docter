@@ -34,21 +34,20 @@ $(document).ready(function() {
         }
 		
         if(password == '') {
-            $(this).find('.error').fadeOut('fast', function(){
-                $(this).css('top', '96px');
+            $(this).ifind('.error').fadeOut('fast', function(){
+                $(ths).css('top', '96px');
             });
             $(this).find('.error').fadeIn('fast', function(){
                 $(this).parent().find('.password').focus();
             });
             return false;
         }
-    });
+    })
 
 
-
-    $('.page-container form .username, .page-container form .password').keyup(function(){
+  /*  $('.page-container form .username, .page-container form .password').keyup(function(){
         $(this).parent().find('.error').fadeOut('fast');
-    });
+    });*/
 
 
     /*$('.page-container form .username').blur(function(){
